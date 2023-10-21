@@ -1,0 +1,14 @@
+D:\00 - code\entities-c-sharp\bin\Debug\net7.0\entities-c-sharp.exe
+D:\00 - code\entities-c-sharp\bin\Debug\net7.0\entities-c-sharp.deps.json
+D:\00 - code\entities-c-sharp\bin\Debug\net7.0\entities-c-sharp.runtimeconfig.json
+D:\00 - code\entities-c-sharp\bin\Debug\net7.0\entities-c-sharp.dll
+D:\00 - code\entities-c-sharp\bin\Debug\net7.0\entities-c-sharp.pdb
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\entities-c-sharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\entities-c-sharp.AssemblyInfoInputs.cache
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\entities-c-sharp.AssemblyInfo.cs
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\entities-c-sharp.csproj.CoreCompileInputs.cache
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\entities-c-sharp.dll
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\refint\entities-c-sharp.dll
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\entities-c-sharp.pdb
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\entities-c-sharp.genruntimeconfig.cache
+D:\00 - code\entities-c-sharp\obj\Debug\net7.0\ref\entities-c-sharp.dll
