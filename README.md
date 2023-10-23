@@ -1,6 +1,7 @@
 C# university assignment
 
 *listar dependencies
+- [ ] Adapt to dependencies 
 
 Codificar classes de entidade
 
