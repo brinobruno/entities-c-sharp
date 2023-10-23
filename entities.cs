@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // Classes de entidade
 public class Entidade
 {
-    public int Id { get; set; }
+  public int Id { get; set; }
 }
 
 public class Endereco : Entidade
@@ -118,11 +118,11 @@ public class Categoria : Entidade
 // Interface Repository
 public interface IRepositorio<T>
 {
-    void Adicionar(T entidade);
-    void Atualizar(T entidade);
-    void Excluir(T entidade);
-    T ObterPorId(int id);
-    List<T> ObterTodos();
+  void Adicionar(T entidade);
+  void Atualizar(T entidade);
+  void Excluir(T entidade);
+  T ObterPorId(int id);
+  List<T> ObterTodos();
 }
 
 // Classe CarrinhoRepository
