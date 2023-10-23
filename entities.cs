@@ -115,8 +115,18 @@ public class Categoria : Entidade
   }
 }
 
+// Interface Repository
+public interface IRepositorio<T>
+{
+    void Adicionar(T entidade);
+    void Atualizar(T entidade);
+    void Excluir(T entidade);
+    T ObterPorId(int id);
+    List<T> ObterTodos();
+}
+
 // Classe CarrinhoRepository
-public class CarrinhoRepository
+public class CarrinhoRepository : IRepositorio<Carrinho>
 {
   private List<Carrinho> carrinhos = new List<Carrinho>();
 
