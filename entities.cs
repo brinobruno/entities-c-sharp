@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 
 // Classes de entidade
-public class Endereco
+public class Entidade
 {
-  public int Id { get; private set; }
+    public int Id { get; set; }
+}
+
+public class Endereco : Entidade
+{
   public string Rua { get; private set; }
   public string Cidade { get; private set; }
   public string Estado { get; private set; }
@@ -20,9 +24,8 @@ public class Endereco
   }
 }
 
-public class Cliente
+public class Cliente : Entidade
 {
-  public int Id { get; private set; }
   public string Nome { get; private set; }
   public long CPF { get; private set; }
   public string Email { get; private set; }
@@ -40,9 +43,8 @@ public class Cliente
   }
 }
 
-public class Carrinho
+public class Carrinho : Entidade
 {
-  public int Id { get; private set; }
   public DateTime DataPedido { get; private set; }
   public decimal ValorTotal { get; private set; }
   public int StatusPedido { get; private set; }
@@ -58,9 +60,8 @@ public class Carrinho
   }
 }
 
-public class Produto
+public class Produto : Entidade
 {
-  public int Id { get; private set; }
   public string Descricao { get; private set; }
   public decimal Preco { get; private set; }
   public string Imagem { get; private set; }
@@ -80,9 +81,8 @@ public class Produto
   }
 }
 
-public class Vendedor
+public class Vendedor : Entidade
 {
-  public int Id { get; private set; }
   public string RazaoSocial { get; private set; }
   public string NomeFantasia { get; private set; }
   public string CNPJ { get; private set; }
@@ -104,9 +104,8 @@ public class Vendedor
   }
 }
 
-public class Categoria
+public class Categoria : Entidade
 {
-  public int Id { get; private set; }
   public string Nome { get; private set; }
 
   public Categoria(int id, string nome)
