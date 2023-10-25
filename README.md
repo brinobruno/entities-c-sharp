@@ -5,7 +5,7 @@ C# university assignment
 
 Codificar classes de entidade
 
-- [ ] Cliente
+- [X] Cliente
 id int
 nome string
 cpf long
@@ -13,14 +13,14 @@ email string
 senha string
 endereco Endereco
 
-- [ ] Carrinho
+- [X] Carrinho
 id int
 dataPedido DateTime
 valorTotal decimal
 statusPedido int
 cliente Cliente
 
-- [ ] Produto
+- [X] Produto
 id int
 descricao string
 preco decimal
@@ -29,7 +29,7 @@ status string
 vendedor Vendedor
 categoria Categoria
 
-- [ ] Vendedor
+- [X] Vendedor
 id int
 razaoSocial string
 nomeFantasia string
@@ -41,7 +41,7 @@ endereco Endereco
 
 Codificar a classe CarrinhoRepository
 
-- [ ] CarrinhoRepository
+- [X] CarrinhoRepository
 Adicionar(entidade: Carrinho): void
 Atualizar(entidade: Carrinho): void
 Excluir(entidade: Carrinho): void
