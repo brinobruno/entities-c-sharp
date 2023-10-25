@@ -1,159 +1,90 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Classes de entidade
-public class Entidade
+public class Endereco
 {
-  public int Id { get; set; }
+    public int Id { get; set; }
+    public string Rua { get; set; } = string.Empty;
+    public string Cidade { get; set; } = string.Empty;
+    public string Estado { get; set; } = string.Empty;
+    public string CEP { get; set; } = string.Empty;
 }
 
-public class Endereco : Entidade
+public class Cliente
 {
-  public string Rua { get; private set; }
-  public string Cidade { get; private set; }
-  public string Estado { get; private set; }
-  public string CEP { get; private set; }
-
-  public Endereco(int id, string rua, string cidade, string estado, string cep)
-  {
-    Id = id;
-    Rua = rua;
-    Cidade = cidade;
-    Estado = estado;
-    CEP = cep;
-  }
+    public int Id { get; set; }
+    public string Nome { get; set; } = string.Empty;
+    public long CPF { get; set; }
+    public string Email { get; set; } = string.Empty;
+    public string Senha { get; set; } = string.Empty;
+    public Endereco Endereco { get; set; } = new Endereco();
 }
 
-public class Cliente : Entidade
+public class Carrinho
 {
-  public string Nome { get; private set; }
-  public long CPF { get; private set; }
-  public string Email { get; private set; }
-  public string Senha { get; private set; }
-  public Endereco Endereco { get; private set; }
-
-  public Cliente(int id, string nome, long cpf, string email, string senha, Endereco endereco)
-  {
-    Id = id;
-    Nome = nome;
-    CPF = cpf;
-    Email = email;
-    Senha = senha;
-    Endereco = endereco;
-  }
+    public int Id { get; set; }
+    public DateTime DataPedido { get; set; }
+    public decimal ValorTotal { get; set; }
+    public int StatusPedido { get; set; }
+    public Cliente Cliente { get; set; } = new Cliente();
 }
 
-public class Carrinho : Entidade
+public class Produto
 {
-  public DateTime DataPedido { get; private set; }
-  public decimal ValorTotal { get; private set; }
-  public int StatusPedido { get; private set; }
-  public Cliente Cliente { get; private set; }
-
-  public Carrinho(int id, DateTime dataPedido, decimal valorTotal, int statusPedido, Cliente cliente)
-  {
-    Id = id;
-    DataPedido = dataPedido;
-    ValorTotal = valorTotal;
-    StatusPedido = statusPedido;
-    Cliente = cliente;
-  }
+    public int Id { get; set; }
+    public string Descricao { get; set; } = string.Empty;
+    public decimal Preco { get; set; }
+    public string Imagem { get; set; } = string.Empty;
+    public string Status { get; set; } = string.Empty;
+    public Vendedor Vendedor { get; set; } = new Vendedor();
+    public Categoria Categoria { get; set; } = new Categoria();
 }
 
-public class Produto : Entidade
+public class Vendedor
 {
-  public string Descricao { get; private set; }
-  public decimal Preco { get; private set; }
-  public string Imagem { get; private set; }
-  public string Status { get; private set; }
-  public Vendedor Vendedor { get; private set; }
-  public Categoria Categoria { get; private set; }
-
-  public Produto(int id, string descricao, decimal preco, string imagem, string status, Vendedor vendedor, Categoria categoria)
-  {
-    Id = id;
-    Descricao = descricao;
-    Preco = preco;
-    Imagem = imagem;
-    Status = status;
-    Vendedor = vendedor;
-    Categoria = categoria;
-  }
+    public int Id { get; set; }
+    public string RazaoSocial { get; set; } = string.Empty;
+    public string NomeFantasia { get; set; } = string.Empty;
+    public string CNPJ { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Senha { get; set; } = string.Empty;
+    public decimal Comissao { get; set; }
+    public Endereco Endereco { get; set; } = new Endereco();
 }
 
-public class Vendedor : Entidade
+public class Categoria
 {
-  public string RazaoSocial { get; private set; }
-  public string NomeFantasia { get; private set; }
-  public string CNPJ { get; private set; }
-  public string Email { get; private set; }
-  public string Senha { get; private set; }
-  public decimal Comissao { get; private set; }
-  public Endereco Endereco { get; private set; }
-
-  public Vendedor(int id, string razaoSocial, string nomeFantasia, string cnpj, string email, string senha, decimal comissao, Endereco endereco)
-  {
-    Id = id;
-    RazaoSocial = razaoSocial;
-    NomeFantasia = nomeFantasia;
-    CNPJ = cnpj;
-    Email = email;
-    Senha = senha;
-    Comissao = comissao;
-    Endereco = endereco;
-  }
-}
-
-public class Categoria : Entidade
-{
-  public string Nome { get; private set; }
-
-  public Categoria(int id, string nome)
-  {
-    Id = id;
-    Nome = nome;
-  }
-}
-
-// Interface Repository
-public interface IRepositorio<T>
-{
-  void Adicionar(T entidade);
-  void Atualizar(T entidade);
-  void Excluir(T entidade);
-  T ObterPorId(int id);
-  List<T> ObterTodos();
+    public int Id { get; set; }
+    public string Nome { get; set; } = string.Empty;
 }
 
 // Classe CarrinhoRepository
-public class CarrinhoRepository : IRepositorio<Carrinho>
+public class CarrinhoRepository
 {
-  private List<Carrinho> carrinhos = new List<Carrinho>();
+    private List<Carrinho> carrinhos = new List<Carrinho>();
 
-  // Métodos CarrinhoRepo
-  public void Adicionar(Carrinho entidade)
-  {
-    carrinhos.Add(entidade);
-  }
+    public void Adicionar(Carrinho entidade)
+    {
+        carrinhos.Add(entidade);
+    }
 
-  public void Atualizar(Carrinho entidade)
-  {
-    // Lógica do atualizar aqui
-  }
+    public void Atualizar(Carrinho entidade)
+    {
+        // Lógica de atualizar
+    }
 
-  public void Excluir(Carrinho entidade)
-  {
-    carrinhos.Remove(entidade);
-  }
+    public void Excluir(Carrinho entidade)
+    {
+        carrinhos.Remove(entidade);
+    }
 
-  public Carrinho ObterPorId(int id)
-  {
-    // Retorna um novo Carrinho se não encontrado
-    return carrinhos.FirstOrDefault(c => c.Id == id) ?? new Carrinho();
-  }
+    public Carrinho ObterPorId(int id)
+    {
+        return carrinhos.FirstOrDefault(c => c.Id == id) ?? new Carrinho();
+    }
 
-  public List<Carrinho> ObterTodos()
-  {
-    return carrinhos;
-  }
+    public List<Carrinho> ObterTodos()
+    {
+        return carrinhos;
+    }
 }
