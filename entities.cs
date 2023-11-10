@@ -68,9 +68,24 @@ public class CarrinhoRepository
         carrinhos.Add(entidade);
     }
 
-    public void Atualizar(Carrinho entidade)
+    public void Atualizar(Carrinho carrinhoAtualizado)
     {
-        // Lógica de atualizar
+        Carrinho carrinhoExistente = carrinhos.FirstOrDefault(c => c.Id == carrinhoAtualizado.Id);
+
+        if (carrinhoExistente != null)
+        {
+            carrinhoExistente.DataPedido = carrinhoAtualizado.DataPedido;
+            carrinhoExistente.ValorTotal = carrinhoAtualizado.ValorTotal;
+            carrinhoExistente.StatusPedido = carrinhoAtualizado.StatusPedido;
+            carrinhoExistente.Cliente = carrinhoAtualizado.Cliente;
+            // Atualize outros campos conforme necessário
+        }
+        else
+        {
+            // Lidar com a situação em que o carrinho não existe na lista
+            // Podemos lançar uma exceção, ou até mesmo adicionar o produto
+            throw new InvalidOperationException("Carrinho não encontrado para atualização.");
+        }
     }
 
     public void Excluir(Carrinho entidade)
