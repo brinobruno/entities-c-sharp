@@ -47,3 +47,5 @@ Atualizar(entidade: Carrinho): void
 Excluir(entidade: Carrinho): void
 ObterPorId(id: int): Carrinho
 ObterTodos(): List<Carrinho>
+
+Note: update cart method done
